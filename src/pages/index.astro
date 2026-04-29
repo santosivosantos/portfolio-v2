@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+const projects = [
+  {
+    title: "BMW C Evolution",
+    subtitle: "Electric Motorcycle Instrument Cluster",
+    year: "2012 — 2014",
+    tags: ["Automotive", "Safety-Critical", "HMI"],
+    url: "/case-studies/bmw-c-evolution/"
+  },
+  {
+    title: "EMS Dashboard",
+    subtitle: "Energy Management System",
+    year: "2025 — 2026",
+    tags: ["B2B", "Data Visualization", "Industrial"],
+    url: "#"
+  }
+];
+---
+
+<Layout>
+  <main>
+    <header>
+      <p class="label">UX/UI Designer — 10+ Years</p>
+      <h1>Ivo Santos</h1>
+      <p class="lead">
+        I design interfaces for complex systems. Currently leading the EMS prototype
+        at Phoenix Contact. Previously shipped the instrument cluster for BMW Motorrad's
+        first electric vehicle.
+      </p>
+      <a href="mailto:hi@ivosantos.com" class="cta">hi@ivosantos.com</a>
+    </header>
+
+    <section class="projects">
+      <p class="section-label">Selected Work</p>
+      <div class="project-grid">
+        {projects.map(p => (
+          <a href={p.url} class="project-card">
+            <span class="project-year">{p.year}</span>
+            <h3>{p.title}</h3>
+            <p class="project-subtitle">{p.subtitle}</p>
+            <div class="project-tags">
+              {p.tags.map(t => <span class="tag">{t}</span>)}
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <footer>
+      <p>Designed and built with Astro.</p>
+    </footer>
+  </main>
+</Layout>

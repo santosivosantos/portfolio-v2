@@ -1,0 +1,69 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+const title = 'BMW C Evolution — Ivo Santos';
+---
+
+<Layout title={title}>
+  <article class="case-study">
+    <header class="case-header">
+      <a href="/">← Back</a>
+      <p class="meta">BMW Motorrad · 2012 – 2014</p>
+      <h1>BMW C Evolution</h1>
+      <p class="subtitle">Electric motorcycle instrument cluster: making invisible physics visible and safe.</p>
+    </header>
+
+    <section class="content">
+      <h2>Context</h2>
+      <p>
+        In 2012, BMW Motorrad tasked a small team with designing the interface for an entirely new vehicle category: a fully electric maxi-scooter. The C Evolution was BMW Motorrad’s first electric vehicle, built on BMW i3 powertrain architecture, and it needed an instrument cluster that communicated concepts no combustion-engine rider had ever seen before.
+      </p>
+      <p><strong>My role:</strong> Lead UI/UX designer for the instrument cluster display, from the K17 prototype phase through production.</p>
+
+      <h2>Problem</h2>
+      <p>Electric mobility requires riders to understand entirely new paradigms:</p>
+      <ul>
+        <li>Real-time energy recuperation (energy flowing back into the battery during braking/coasting)</li>
+        <li>Dynamic range estimation based on physics, not a static fuel gauge</li>
+        <li>High-voltage system status and safety diagnostics</li>
+        <li>Software-limited riding modes that fundamentally alter throttle response and deceleration</li>
+      </ul>
+      <p><strong>The core challenge:</strong> Riders needed to parse energy flow states at a passing glance, without taking their eyes off urban traffic. The interface had to make invisible physics visible — and safe.</p>
+
+      <h2>Constraints</h2>
+      <ul>
+        <li><strong>Physical controls only.</strong> Touchscreens while riding a 275 kg scooter are impossible. All navigation used two physical buttons (TRIP/INFO) on the left handlebar.</li>
+        <li><strong>ECE R100 regulatory compliance.</strong> Critical warnings had to remain visible even during a software crash, forcing a split between the creative TFT display and mandated physical warning array.</li>
+        <li><strong>No EV interface precedents.</strong> There were no established patterns for communicating bidirectional energy flow. We were defining the language.</li>
+        <li><strong>Hardware limitations.</strong> The TFT had to be readable in direct sunlight and at night, with high refresh rates to match instantaneous torque feedback.</li>
+      </ul>
+
+      <h2>Exploration</h2>
+      <p><strong>Spatial layout:</strong> We tested multiple information architectures before committing to a strict quadrant layout: speed + energy flow at the top (most critical), battery SOC on the right, trip context on the left, odometer at the bottom (passive). This created a consistent cognitive path.</p>
+      <p><strong>Energy visualization:</strong> Pie charts, numeric percentages, and linear gauges were all explored. We settled on paired dynamic bar graphs — ePOWER (consumption) and CHARGE (recuperation). Segmented, color-coded bars grew and shrank with throttle and brake input, making the physics visceral without requiring reading.</p>
+      <p><strong>Riding modes:</strong> The four modes (ROAD, ECO PRO, DYNAMIC, SAIL) changed powertrain behavior dramatically. We needed the rider to know the active mode at a subconscious level. We explored persistent mode badges, color theming, and kinetic typography before converging on a behavior-modulated energy graph baseline.</p>
+
+      <h2>Decision</h2>
+      <p><strong>Quadrant layout:</strong> Strict spatial mapping created muscle memory. A rider’s eye travels to the same region for the same data every time — critical when the alternative is a 2,000-page manual.</p>
+      <p><strong>Dual bar energy graph:</strong> ePOWER and CHARGE as paired horizontal bars showed the energy tug-of-war in real time. When accelerating, ePOWER filled; when coasting or braking, CHARGE filled.</p>
+      <p><strong>Pre-attentive safety signals:</strong> When reverse mode engaged, the entire display color scheme inverted. No reading required — the rider’s peripheral vision registered the visual shock instantly. This is pre-attentive processing: the fastest neural path from eye to action.</p>
+      <p><strong>Charging state visualization:</strong> When plugged in, the display abandoned riding metrics and shifted to a dedicated charging screen with animated energy flow, SOC, voltage, and ETA. The animation reassured the rider that charging was active.</p>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li><strong>Shipped</strong> on the BMW C Evolution in spring 2014, with a Long Range update in 2017.</li>
+        <li><strong>Adopted by riders:</strong> The energy flow visualization became one of the most commented-on features in owner forums and press reviews.</li>
+        <li><strong>Safety record:</strong> The physical-digital split for warnings satisfied ECE R100. Critical warnings were hardware-linked, independent of the TFT.</li>
+        <li><strong>IP navigation:</strong> Original source files remain BMW property under NDA. This case study is constructed from publicly released press materials and documented design reasoning.</li>
+      </ul>
+
+      <h2>Reflection</h2>
+      <p><strong>Production humbled the concept.</strong> The K17 prototype was ambitious — fluid animations, fully integrated digital warnings, seamless hardware-software blending. Production split the creative display from mandatory physical tell-tales. That compromise felt like a defeat, but it was the right call. A rider with a crashed screen and no warning light is a liability.</p>
+      <p><strong>The most important designs are invisible.</strong> Riders never complimented the layout or color theory. They trusted the energy feedback, and the bike felt predictable. Good interface design in safety-critical contexts is design the user never has to think about.</p>
+      <p><strong>What I would do differently:</strong> I would push harder for animated transitions between riding modes. The static mode badge was functional, but the physics change between ROAD and DYNAMIC was dramatic — a visual animation bridging the shift would have reinforced the mental model even faster.</p>
+    </section>
+
+    <footer>
+      <a href="/">← All projects</a>
+    </footer>
+  </article>
+</Layout>
