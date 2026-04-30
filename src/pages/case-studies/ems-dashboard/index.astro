@@ -1,0 +1,83 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+const title = 'EMS Dashboard — Ivo Santos';
+const description = 'Designing for trust on a complex energy management platform at Phoenix Contact.';
+---
+
+<Layout title={title} description={description}>
+  <article class="case-study">
+    <header class="case-header">
+      <a href="/">&#8592; Back</a>
+      <p class="meta">Phoenix Contact &middot; 2025 &mdash; 2026</p>
+      <h1>EMS Dashboard</h1>
+      <p class="subtitle">Designing for trust on a complex energy management platform.</p>
+    </header>
+
+    <section class="content">
+      <h2>Context</h2>
+      <p>
+        EMS is a web application on Phoenix Contact's Proficloud.io platform, used by industrial operators to monitor energy consumption and prove savings. As sole designer, I own the design end-to-end &mdash; research, IA, interaction, visual, and the cross-functional alignment with the PO and engineering that turns design into shipped work.
+      </p>
+      <p>
+        The product's value rests on a simple promise: users should be able to see what their facilities consume, and prove what they've saved. Both depend on users <em>trusting</em> the data they're shown.
+      </p>
+      <p><strong>My role:</strong> Sole designer. Research, interaction design, visual design, and the product design-engineering bridge that turns design decisions into shipped features.</p>
+
+      <h2>Problem</h2>
+      <p>As the product grew, the surface area expanded and the complexity beneath it grew too &mdash; tree-structured data across roughly ten aggregation levels, a platform mid-migration, and a single designer covering a multi-product portfolio. Trust in the data was starting to fray in specific, visible places:</p>
+      <ul>
+        <li><strong>Measurement & Verification (M&V)</strong> &mdash; users couldn't successfully configure the savings-proof feature because they had no mental model of what it was.</li>
+        <li><strong>Recurring reports</strong> &mdash; two rendering systems (client-side charts and server-side report generation) risked visual divergence, which would undermine confidence in both.</li>
+        <li><strong>Alerts</strong> &mdash; users needed signal, not noise, in a system where there was always more data than attention.</li>
+      </ul>
+      <p><em>Each required design judgment, not just design craft. None could be solved with cleaner pixels alone.</em></p>
+
+      <h2>Exploration</h2>
+      <h3>M&V wizard: understanding the failure</h3>
+      <p>I ran a user shadowing session and watched someone attempt to create an M&V configuration cold. Multiple usability issues surfaced &mdash; but rather than treat them as a flat list of fixes, I synthesized them into three clusters with a root-cause trace-back:</p>
+      <ol>
+        <li><strong>Conceptual gap</strong> &mdash; users had no mental model of what M&V was before being asked to configure it. Every downstream failure traced back to this.</li>
+        <li><strong>Wizard flow failures</strong> &mdash; all-at-once modal, ambiguous boundary/metric distinction, no live preview, no post-creation next step.</li>
+        <li><strong>Widget failures</strong> &mdash; "Prediction" misread as forecasting, no zoom, savings invisible, broken hitboxes, confusing change log.</li>
+      </ol>
+
+      <h3>Recurring reports: the rendering parity problem</h3>
+      <p>The product's chart engine (amCharts) renders client-side, which meant the backend had to generate parallel server-side renderings for automated reports delivered by email. Two rendering paths for the same data. I traced the design risk: if the report charts diverged from the dashboard charts, users would lose trust in both. The design work here wasn't the UI &mdash; it was authoring chart-by-chart acceptance criteria so the version in your inbox matched what you saw when you logged in.</p>
+
+      <h3>Alerts: signal vs. noise</h3>
+      <p>The alerting system needed to be opinionated. In a data-heavy product where there is always more data than attention, the default is notification fatigue. I designed the foundational alert layer to be the substrate for future intelligence &mdash; ship the boring foundation before designing shiny augmentation.</p>
+
+      <h2>Decision</h2>
+      <p><strong>Staged wizard for M&V:</strong> Replace the single modal with a step-by-step flow. Each stage built the mental model incrementally: what M&V is &rarr; what to measure &rarr; how to define the boundary &rarr; preview before commit. The live preview was the antidote to the conceptual gap &mdash; users could see the result of their configuration before it existed.</p>
+      <p><strong>Chart-by-chart parity criteria:</strong> For recurring reports, I authored acceptance criteria that specified what each chart had to look like, behave like, and represent &mdash; per chart type, per data context. The backend engineers used these as the source of truth for their server-side rendering logic. This is the kind of design contribution that doesn't screenshot well, but it's the reason the feature works.</p>
+      <p><strong>Foundational alerting layer:</strong> Designed and shipped the alert creation, management, and notification flow as a closed system &mdash; users could create, edit, silence, and delete alerts without engineering intervention. This became the substrate the Smart Alerts AI concept (below) is built to enhance.</p>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li><strong>M&V wizard:</strong> Four of five major redesign changes are live in production &mdash; staged wizard, live preview, boundary/metric clarity, and a post-creation CTA. The fifth (date picker fix) is in backlog.</li>
+        <li><strong>Recurring reports:</strong> Shipped with visual parity acceptance criteria. Users receive automated reports matching their dashboard view.</li>
+        <li><strong>Alerts:</strong> Shipped as the foundational layer. No alert-related support tickets in two quarters.</li>
+        <li><strong>Cumulocity migration:</strong> Ongoing. Translating platform migration constraints into UX consequences for product leadership. Advocating for graceful degradation where degradation is unavoidable.</li>
+      </ul>
+
+      <h2>Forward work</h2>
+      <p>I scoped four AI feature concepts grounded in the pain I'd diagnosed above &mdash; not in AI feature lust:</p>
+      <ul>
+        <li><strong>Smart Alerts</strong> &mdash; semantic enrichment of the existing alerting layer, reducing notification fatigue.</li>
+        <li><strong>Automated Report Narratives</strong> &mdash; turning recurring reports into prose summaries for non-technical stakeholders.</li>
+        <li><strong>Natural Language Query</strong> &mdash; addressing the navigation cost of tree-structured data with ten aggregation levels.</li>
+        <li><strong>ECM Opportunity Discovery</strong> &mdash; surfacing energy conservation measures from the data, rather than waiting for users to find them.</li>
+      </ul>
+      <p>Each was prompted into Google Stitch as a concrete, reactable artifact. Currently in stakeholder discussion.</p>
+
+      <h2>Reflection</h2>
+      <p><em>The synthesis structure was the design work.</em> Without root-cause trace-back, the team would have been fixing visible symptoms in priority order forever. The staged wizard, the parity criteria, the alert foundation &mdash; these were all downstream of taking the time to understand why users were failing, not just where.</p>
+      <p><em>Design as strategic leverage requires artifacts, not just instincts.</em> Several times during this project I had a clear take on a technical or platform decision that should have been more structured than a hallway conversation. The instinct was right; the artifact wasn't built. What separates senior designers from design leaders is largely this &mdash; leaders make the structured argument that forces the decision. I'm building this muscle deliberately now.</p>
+      <p><em>In complex enterprise software where impact is diffuse and metrics are imperfect, the strongest evidence of design's value is often the work that <em>didn't</em> get built, the misalignment that <em>didn't</em> happen, and the trust that <em>didn't</em> break. Harder to put on a portfolio than a clean conversion-rate headline. But it's the actual work.</em></p>
+    </section>
+
+    <footer>
+      <a href="/">&#8592; All projects</a>
+    </footer>
+  </article>
+</Layout>
