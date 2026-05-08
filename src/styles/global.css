@@ -139,6 +139,32 @@ h1 {
   color: var(--muted);
 }
 
+/* Clients */
+.clients {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.logo-item img {
+  height: 26px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.2;
+  transition: opacity 0.25s ease;
+}
+
+.logo-item img:hover {
+  opacity: 0.6;
+}
+
 /* Footer */
 footer {
   margin-top: 5rem;
