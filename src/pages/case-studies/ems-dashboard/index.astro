@@ -2,12 +2,13 @@
 import Layout from '../../../layouts/Layout.astro';
 const title = 'EMS Dashboard — Ivo Santos';
 const description = 'Designing for trust on a complex energy management platform at Phoenix Contact.';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title={title} description={description}>
   <article class="case-study">
     <header class="case-header">
-      <a href="/">&#8592; Back</a>
+      <a href={base}>&#8592; Back</a>
       <p class="meta">Phoenix Contact &middot; 2025 &mdash; 2026</p>
       <h1>EMS Dashboard</h1>
       <p class="subtitle">Designing for trust on a complex energy management platform.</p>
@@ -77,7 +78,7 @@ const description = 'Designing for trust on a complex energy management platform
     </section>
 
     <footer>
-      <a href="/">&#8592; All projects</a>
+      <a href={base}>&#8592; All projects</a>
     </footer>
   </article>
 </Layout>
