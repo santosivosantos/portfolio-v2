@@ -1,20 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const projects = [
   {
     title: "BMW C Evolution",
     subtitle: "Electric Motorcycle Instrument Cluster",
     year: "2012 — 2014",
     tags: ["Automotive", "Safety-Critical", "HMI"],
-    url: `${base}/case-studies/bmw-c-evolution/`
+    url: "/case-studies/bmw-c-evolution/"
   },
   {
     title: "EMS Dashboard",
     subtitle: "Energy Management System",
     year: "2025 — 2026",
     tags: ["B2B", "Data Visualization", "Industrial"],
-    url: `${base}/case-studies/ems-dashboard/`
+    url: "/case-studies/ems-dashboard/"
   }
 ];
 ---
@@ -52,22 +51,22 @@ const projects = [
       <p class="section-label">Selected Clients</p>
       <div class="logo-row">
         <div class="logo-item">
-          <img src={`${base}/images/logos/bmw-group.svg`} alt="BMW Group" />
+          <img src="/images/logos/bmw-group.svg" alt="BMW Group" />
         </div>
         <div class="logo-item">
-          <img src={`${base}/images/logos/bmw-motorrad.svg`} alt="BMW Motorrad" />
+          <img src="/images/logos/bmw-motorrad.svg" alt="BMW Motorrad" />
         </div>
         <div class="logo-item">
-          <img src={`${base}/images/logos/mini.svg`} alt="MINI" />
+          <img src="/images/logos/mini.svg" alt="MINI" />
         </div>
         <div class="logo-item">
-          <img src={`${base}/images/logos/john-deere.svg`} alt="John Deere" />
+          <img src="/images/logos/john-deere.svg" alt="John Deere" />
         </div>
         <div class="logo-item">
-          <img src={`${base}/images/logos/avatera-medical.svg`} alt="Avatera Medical" />
+          <img src="/images/logos/avatera-medical.svg" alt="Avatera Medical" />
         </div>
         <div class="logo-item">
-          <img src={`${base}/images/logos/crossmatch.svg`} alt="Crossmatch" />
+          <img src="/images/logos/crossmatch.svg" alt="Crossmatch" />
         </div>
       </div>
     </section>

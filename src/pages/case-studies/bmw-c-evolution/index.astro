@@ -1,18 +1,17 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 const title = 'BMW C Evolution — Ivo Santos';
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title={title}>
   <article class="case-study">
     <header class="case-header">
-      <a href={base}>← Back</a>
+      <a href="/">← Back</a>
       <p class="meta">BMW Motorrad · 2012 – 2014</p>
       <h1>BMW C Evolution</h1>
       <p class="subtitle">Electric motorcycle instrument cluster: making invisible physics visible and safe.</p>
       <figure class="case-hero-image">
-        <img src={`${base}/images/case-studies/bmw/BMW-C-Evolution-electric-scooter-studio-USA-02.jpg`} alt="BMW C Evolution electric scooter studio photograph" />
+        <img src="/images/case-studies/bmw/BMW-C-Evolution-electric-scooter-studio-USA-02.jpg" alt="BMW C Evolution electric scooter studio photograph" />
         <figcaption>Photo: BMW Motorrad</figcaption>
       </figure>
     </header>
@@ -24,7 +23,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </p>
       <p><strong>My role:</strong> Lead UI/UX designer for the instrument cluster display, from the K17 prototype phase through production.</p>
       <figure class="case-image context">
-        <img src={`${base}/images/case-studies/bmw/P90132923-highRes.jpg`} alt="BMW C Evolution electric scooter in action, demonstrating the vehicle in its urban environment" />
+        <img src="/images/case-studies/bmw/P90132923-highRes.jpg" alt="BMW C Evolution electric scooter in action, demonstrating the vehicle in its urban environment" />
         <figcaption>The C Evolution in its environment: a 275 kg electric maxi-scooter built on BMW i3 powertrain architecture.</figcaption>
       </figure>
 
@@ -51,19 +50,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <p><strong>Energy visualization:</strong> Pie charts, numeric percentages, and linear gauges were all explored. We settled on paired dynamic bar graphs — ePOWER (consumption) and CHARGE (recuperation). Segmented, color-coded bars grew and shrank with throttle and brake input, making the physics visceral without requiring reading.</p>
       <figure class="case-image-grid">
         <div class="grid-item">
-          <img src={`${base}/images/case-studies/bmw/vehicle-ready.png`} alt="Vehicle Ready screen showing energy state when ignition is on" />
+          <img src="/images/case-studies/bmw/vehicle-ready.png" alt="Vehicle Ready screen showing energy state when ignition is on" />
           <figcaption>Vehicle Ready: energy state at ignition</figcaption>
         </div>
         <div class="grid-item">
-          <img src={`${base}/images/case-studies/bmw/normal-riding.png`} alt="Normal CITY riding mode with energy flow visualization" />
+          <img src="/images/case-studies/bmw/normal-riding.png" alt="Normal CITY riding mode with energy flow visualization" />
           <figcaption>Normal CITY: the primary riding mode</figcaption>
         </div>
         <div class="grid-item">
-          <img src={`${base}/images/case-studies/bmw/charge.png`} alt="Charging screen with animated energy flow visualization" />
+          <img src="/images/case-studies/bmw/charge.png" alt="Charging screen with animated energy flow visualization" />
           <figcaption>CHARGE: energy flow during charging</figcaption>
         </div>
         <div class="grid-item">
-          <img src={`${base}/images/case-studies/bmw/reverse.png`} alt="Reverse Gear Display with color-inverted safety signal" />
+          <img src="/images/case-studies/bmw/reverse.png" alt="Reverse Gear Display with color-inverted safety signal" />
           <figcaption>Reverse Gear: pre-attentive safety signal</figcaption>
         </div>
       </figure>
@@ -91,7 +90,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </section>
 
     <footer>
-      <a href={base}>← All projects</a>
+      <a href="/">← All projects</a>
     </footer>
   </article>
 </Layout>
